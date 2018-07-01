@@ -1,0 +1,17 @@
+services:
+    league.retriever:
+        class: AppBundle\Services\LeagueRetriever
+        arguments:
+            - "@doctrine.orm.entity_manager"
+    league.remover:
+        class: AppBundle\Services\LeagueRemover
+        arguments:
+            - "@doctrine.orm.entity_manager"
+    football.team.creator:
+        class: AppBundle\Services\FootballTeamCreator
+        arguments:
+            - "@doctrine.orm.entity_manager"
+    football.team.editor:
+        class: AppBundle\Services\FootballTeamEditor
+        arguments:
+            - "@doctrine.orm.entity_manager"

@@ -1,0 +1,27 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+league-get-football-team-list:
+    methods: [GET]
+    path: /api/league-get-football-team-list/{id}
+    defaults: { _controller: AppBundle:League:getFootballTeamList }
+
+create-football-team:
+    methods: [PUT]
+    path: /api/football-team/{id}
+    defaults: { _controller: AppBundle:FootballTeam:put }
+
+update-football-team:
+    methods: [POST]
+    path: /api/football-team
+    defaults: { _controller: AppBundle:FootballTeam:post }
+
+delete-league:
+    methods: [DELETE]
+    path: /api/league/{id}
+    defaults: { _controller: AppBundle:League:delete }
+
+api_login_check:
+    path: /api/login_check
+    defaults: { _controller: AppBundle:Security:login }

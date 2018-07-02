@@ -32,14 +32,14 @@
         "symfony/serializer": "^4.1",
         "symfony/swiftmailer-bundle": "^2.6.4",
         "jms/serializer-bundle": "^1.1.0",
-        "symfony/symfony": "3.4.*",
-        "twig/twig": "^1.0||^2.0"
+        "symfony/symfony": "3.4.*"
     },
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "^3.0",
         "phpunit/phpunit": "^7.2",
         "sensio/generator-bundle": "^3.0",
-        "symfony/phpunit-bridge": "^4.1"
+        "symfony/phpunit-bridge": "^4.1",
+        "guzzlehttp/guzzle": "^6.3"
     },
     "scripts": {
         "symfony-scripts": [

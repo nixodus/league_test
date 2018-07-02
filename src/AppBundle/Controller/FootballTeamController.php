@@ -21,27 +21,16 @@ class FootballTeamController extends Controller
     public function putAction(Request $request, $id)
     {
 
-
         $data = json_decode($request->getContent(), true);
 
-
-       // parse_str($request->getContent(),$post_vars);
-
-        var_dump($data);
-
-
-        $name     = (string)$request->request->get('name');
-        $strip    = (string)$request->request->get('strip');
-
-        $name22 = $request->get('name');
-
-        var_dump($id, $name, $strip, $name22);
+        $name     = (string)$data['name'];
+        $strip    = (string)$data['strip'];
 
         /** @var FootballTeamEditor $footballTeamEditor */
         $footballTeamEditor = $this->get('football.team.editor');
 
         try {
-            if(empty($footballTeamId)){
+            if(empty($id)){
                 throw new \Exception('Football team id is not valid!');
             }
 
@@ -61,9 +50,12 @@ class FootballTeamController extends Controller
 
     public function postAction(Request $request)
     {
-        $leagueId =  $request->request->get("league_id");
-        $name     = (string)$request->request->get('name');
-        $strip    = (string)$request->request->get('strip');
+
+        $data = json_decode($request->getContent(), true);
+
+        $leagueId =  (int)$data['league_id'];
+        $name     = (string)$data['name'];
+        $strip    = (string)$data['strip'];
 
         /** @var FootballTeamCreator $footballTeamCreator */
         $footballTeamCreator = $this->get('football.team.creator');

@@ -6,9 +6,10 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use AppBundle\Entity\User;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 
 
-class LoadSystemUserData extends Fixture
+class LoadSystemUserData extends Fixture implements OrderedFixtureInterface
 {
     private $encoder;
 
@@ -17,13 +18,13 @@ class LoadSystemUserData extends Fixture
         $this->encoder = $encoder;
     }
 
-    // ...
+
     public function load(ObjectManager $manager)
     {
         $user = new User();
         $user->setUsername('admin');
 
-        $password = $this->encoder->encodePassword($user, 'pass_1234');
+        $password = $this->encoder->encodePassword($user, '!@WQSDFFF');
         $user->setPassword($password);
         $user->setEmail('boo@email.com');
 

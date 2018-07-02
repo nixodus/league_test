@@ -22,3 +22,6 @@ openssl rsa -pubout -in var/jwt/private.pem -out var/jwt/public.pem
 
 ./bin/console server:start
 
+
+##Remember - update jwt_key_pass_phrase in parameters.yml
+jwt_key_pass_phrase:

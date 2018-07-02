@@ -7,12 +7,12 @@ league-get-football-team-list:
     path: /api/league-get-football-team-list/{id}
     defaults: { _controller: AppBundle:League:getFootballTeamList }
 
-create-football-team:
+update-football-team:
     methods: [PUT]
     path: /api/football-team/{id}
     defaults: { _controller: AppBundle:FootballTeam:put }
 
-update-football-team:
+create-football-team:
     methods: [POST]
     path: /api/football-team
     defaults: { _controller: AppBundle:FootballTeam:post }
